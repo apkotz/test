@@ -7,6 +7,7 @@ pipeline {
 			steps {
 				sh "yum install httpd -y"
 			}
+		}	
 		stage ('start apache') {
 			steps {
 				sh "service httpd start"
@@ -17,6 +18,7 @@ pipeline {
                                 sh "cp index.html /var/www/html/"
 				sh "chmod -R777 /var/www/html/index.html"
                         }
-	}
-}
+	       }
 	 }
+	
+}
