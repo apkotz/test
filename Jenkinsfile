@@ -29,7 +29,7 @@ pipeline {
 												steps {
 													        	
 													        
-														sh "scp -i MyWS-1 /root/.jenkins/workspace/Deploy/index.html ec2-user@172.31.37.109:/mnt/jenkins-slave/"
+														sh "scp -i MyWS-1.pem /root/.jenkins/workspace/Deploy/index.html ec2-user@172.31.37.109:/mnt/jenkins-slave/"
 							
                         		      		     }
 	                                        }
