@@ -28,8 +28,8 @@ pipeline {
 		 stage ('index file copy to node dir') {
 												steps {
 													        	
-													        sh "chmod -R 700 /root/MyWS-1"
-														sh "scp -i MyWS-1 /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace/multi-node_master/"
+													        sh "chmod -R 400 /root/MyWS-1"
+														sh "scp -i MyWS-1 /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace/"
                         		      		     }
 	                                        }
 		 stage ('node') {
