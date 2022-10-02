@@ -29,7 +29,7 @@ pipeline {
 												steps {
 													        	
 													        
-														sh "scp -o StrictHostKeyChecking=no /root/.jenkins/workspace/multi-node_master/index.html ec2-user@3.110.56.124:/mnt/jenkins-slave/workspace/"
+														sh "scp -o StrictHostKeyChecking=no /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace/"
 							
                         		      		     }
 	                                        }
