@@ -21,7 +21,7 @@ pipeline {
                         				steps {
                                 			        sh "cp index.html /var/www/html/"
 							        sh "chmod -R 777 /var/www/html/index.html"
-								sh "scp -i "MyWS-1" /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace"
+								sh "scp -i MyWS-1 /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace"
                         		      		     }
 	                                        }
 		 stage ('node') {
