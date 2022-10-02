@@ -1,14 +1,9 @@
 pipeline {
       agent {
-                label '172.31.3.162'
+                label 'built-in'
             }
          stages {
-		 stage ('install git') {
-			
-					steps {
-						sh "yum install git -y"
-			      		      }
-		                         }	
+		 
 		 stage ('install apache') {
 			
 					steps {
