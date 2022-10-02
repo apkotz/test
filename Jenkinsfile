@@ -29,14 +29,14 @@ pipeline {
 												steps {
 													        	
 													        
-														sh "scp -o StrictHostKeyChecking=no /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace/"
+														sh "scp -o StrictHostKeyChecking=no /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.37.109:/mnt/jenkins-slave/workspace/"
 							
                         		      		     }
 	                                        }
 		 stage ('node') {
 			 agent {
 				 label {
-					 label "172.31.3.162"
+					 label "172.31.37.109"
 				       }
 			      }
 			 steps {
