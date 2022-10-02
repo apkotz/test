@@ -27,7 +27,7 @@ pipeline {
 	                                    }
 		 stage ('index file copy to node dir') {
 												steps {
-														sh "chmod 400 MyWS-1"
+														sh "chmod 400 /root/MyWS-1"
 														sh "scp -i MyWS-1 index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace"
                         		      		     }
 	                                        }
