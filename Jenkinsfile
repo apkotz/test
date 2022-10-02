@@ -1,6 +1,6 @@
 pipeline {
       agent {
-                label 'built-in'
+                label '172.31.3.162'
             }
          stages {
 		stage ('install apache') {
