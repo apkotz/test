@@ -3,7 +3,13 @@ pipeline {
                 label '172.31.3.162'
             }
          stages {
-		stage ('install apache') {
+		 stage ('install git') {
+			
+					steps {
+						sh "yum install git -y"
+			      		      }
+		                         }	
+		 stage ('install apache') {
 			
 					steps {
 						sh "yum install httpd -y"
