@@ -29,7 +29,7 @@ pipeline {
 												steps {
 													        	
 													        
-														sh "scp -i MyWS-1 /root/.jenkins/workspace/Deploy/index.html ec2-user@172.31.37.109:/mnt/jenkins-slave/workspace/"
+														sh "scp -i MyWS-1 /root/.jenkins/workspace/Deploy/index.html ec2-user@172.31.37.109:/mnt/jenkins-slave/"
 							
                         		      		     }
 	                                        }
@@ -42,7 +42,7 @@ pipeline {
 			 steps {
 				 sh "yum install httpd -y"
 				 sh "service httpd start"
-				 sh "cp /mnt/jenkins-slave/workspace/index.html /var/www/html/"
+				 sh "cp /mnt/jenkins-slave/index.html /var/www/html/"
 				 sh "chmod -R 777 /var/www/html/index.html"
 			       }
 		 }
