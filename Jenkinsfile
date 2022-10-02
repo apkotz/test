@@ -22,15 +22,13 @@ pipeline {
 			
                         				steps {
                                 			        sh "cp index.html /var/www/html/"
-							        sh "chmod -R 777 /var/www/html/index.html"
-								sh "scp -i MyWS-1 /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace"
-                        		      		     }
-	                                        }
+													sh "chmod -R 777 /var/www/html/index.html"
+										      }
+	                                    }
 		 stage ('index file copy to node dir') {
-			
-                        				steps {
-                                			        sh "chmod 400 MyWS-1"
-								sh "scp -i MyWS-1 /root/.jenkins/workspace/multi-node_master/index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace"
+												steps {
+														sh "chmod 400 MyWS-1"
+														sh "scp -i MyWS-1 index.html ec2-user@172.31.3.162:/mnt/jenkins-slave/workspace"
                         		      		     }
 	                                        }
 		 stage ('node') {
