@@ -1,10 +1,6 @@
 pipeline {
-      agent {
-	      label {
-                      label 'built-in'
-                    }
-            }
-         stages {
+      agent any
+	   stages {
 		 
 		 stage ('install apache') {
 			
@@ -29,4 +25,3 @@ pipeline {
 		 }
 	}
 	
-
