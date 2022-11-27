@@ -5,15 +5,8 @@ pipeline {
                     }
             }
          stages {
-		 stage ('git clone') {
-					
-					steps {
-					git changelog: false, url: 'https://github.com/apkotz/test.git'
-					}
 		 
-		 
-		 }
-		 stage ('install apache') {
+	 stage ('install apache') {
 			
 					steps {
 						sh "yum install httpd -y"
@@ -40,7 +33,7 @@ pipeline {
 				
 				}
 				steps {
-				git branch: 'qa', changelog: false, poll: false, url: 'https://github.com/apkotz/test.git'
+				git clone --single-branch --branch qa https://github.com/apkotz/test.git
 				sh "sudo yum install httpd -y"
 				sh "sudo service httpd start"
 				sh "sudo cp index.html /var/www/html/"
