@@ -6,7 +6,7 @@ pipeline {
             }
          stages {
 				stage ("parallel") {
-		 
+		 parallel {
 	 stage ('on node-1') {
 			
 					      
@@ -40,7 +40,7 @@ pipeline {
 									}
 								
 								}
-			   
+			            }
 					}
 				}
 		} 
