@@ -9,7 +9,8 @@ pipeline {
 	 stage ('install apache') {
 			
 					      
-								steps { sh "sudo yum install git -y"
+								steps {        sh "sudo rm -rf test"
+									        sh "sudo yum install git -y"
 										sh "git clone --single-branch --branch qa https://github.com/apkotz/test.git"
 										sh "sudo yum install httpd -y"
 										sh "sudo service httpd start"
@@ -29,6 +30,7 @@ pipeline {
             
 									}
 									steps {
+										sh "sudo rm -rf test"
 									    sh "sudo yum install git -y"
 										sh "git clone --single-branch --branch dev-1 https://github.com/apkotz/test.git"
 										sh "sudo yum install httpd -y"
