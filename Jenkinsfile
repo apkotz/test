@@ -1,16 +1,16 @@
 pipeline {
       agent {
 	      label {
-                      label 'Node-1'
+                      label 'Node-2'
                     }
             }
          stages {
 				stage ("parallel") {
 		 parallel {
-	 stage ('on node-1') {
+	 stage ('on node-2') {
 			
 					      
-								steps { sh "sudo yum install git -y"
+								steps { 
 										sh "git clone --single-branch --branch qa https://github.com/apkotz/test.git"
 										sh "sudo yum install httpd -y"
 										sh "sudo service httpd start"
@@ -21,16 +21,16 @@ pipeline {
 									  }
 							}
 									  
-				                stage ( 'on node-2'){
+				                stage ( 'on node-1'){
 								
 									agent {
 											label {
-													label 'Node-2'
+													label 'Node-1'
 									        }
             
 									}
 									steps {
-									    sh "sudo yum install git -y"
+									    
 										sh "git clone --single-branch --branch dev-1 https://github.com/apkotz/test.git"
 										sh "sudo yum install httpd -y"
 										sh "sudo service httpd start"
