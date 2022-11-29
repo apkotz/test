@@ -1,11 +1,11 @@
 pipeline {
       agent {
 	      label {
-                      label 'Node-1
+                      label 'Node-1'
                     }
             }
          stages {
-				stage (parallel) {
+				stage ('parallel') {
 		 
 	 stage ('on node-1') {
 			
