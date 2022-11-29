@@ -5,7 +5,7 @@ pipeline {
                     }
             }
          stages {
-				stage ('parallel') {
+				stage ("parallel") {
 		 
 	 stage ('on node-1') {
 			
