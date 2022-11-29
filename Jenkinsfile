@@ -11,7 +11,7 @@ pipeline {
 			
 					      
 								steps { 
-										sh "git clone --single-branch --branch qa https://github.com/apkotz/test.git"
+										sh "git checkout qa"
 										sh "sudo yum install httpd -y"
 										sh "sudo service httpd start"
 										sh "sudo cp index.html /var/www/html/"
@@ -31,7 +31,7 @@ pipeline {
 									}
 									steps {
 									    
-										sh "git clone --single-branch --branch dev-1 https://github.com/apkotz/test.git"
+										sh "git checkout dev-1"
 										sh "sudo yum install httpd -y"
 										sh "sudo service httpd start"
 										sh "sudo cp index.html /var/www/html/"
