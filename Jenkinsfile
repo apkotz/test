@@ -20,7 +20,7 @@ pipeline {
 									  }
 							}
 									  
-				                stage {
+				                stage ( 'on node-1'){
 								
 									agent {
 											label {
