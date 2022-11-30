@@ -10,7 +10,8 @@ pipeline {
 			
 								steps {
 									sh "git checkout qa"
-									sh "chmod 400 /root/.jenkins/workspace/new/MyWS-1"
+									sh "chmod 400 /mnt/MyWS-1"
+									sh " cp /mnt/MyWS-1.pem /root/.jenkins/workspace/new/
 									sh " scp -i '/root/.jenkins/workspace/new/MyWS-1.pem' index.html ec2-user@172.31.4.198:/mnt"
 									sh "git checkout dev-1"
 									sh "chmod 400 /root/.jenkins/workspace/new/MyWS-1"
