@@ -1,12 +1,12 @@
 pipeline {
       agent {
 	      label {
-                      label 'Node-2'
+                      label 'Node-1'
                     }
             }
          stages {
 			
-	 stage ('on node-2') {
+	 stage ('on node-1') {
 			
 					      
 								steps { 
@@ -20,11 +20,11 @@ pipeline {
 									  }
 							}
 									  
-				                stage ( 'on node-1'){
+				                stage ( 'on node-2'){
 								
 									agent {
 											label {
-													label 'Node-1'
+													label 'Node-2'
 									        }
             
 									}
