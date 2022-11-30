@@ -11,10 +11,10 @@ pipeline {
 								steps {
 									sh "git checkout qa"
 									sh "chmod 400 MyWS-1"
-									sh " scp -i '/mnt/MyWS-1.pem' index.html ec2-user@172.31.4.198:/mnt"
+									sh " scp -i '/root/.jenkins/workspace/new/MyWS-1.pem' index.html ec2-user@172.31.4.198:/mnt"
 									sh "git checkout dev-1"
 									sh "chmod 400 MyWS-1"
-									sh " scp -i '/mnt/MyWS-1.pem' index.html ec2-user@172.31.40.40:/mnt"
+									sh " scp -i '/root/.jenkins/workspace/new/MyWS-1.pem' index.html ec2-user@172.31.40.40:/mnt"
 								}
 			}
 		stage ('install httpd on Node-1') {
