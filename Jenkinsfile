@@ -13,7 +13,7 @@ pipeline {
 									sh "git checkout qa"
 									sh " cp /mnt/MyWS-1.pem /root/.jenkins/workspace/new/"
 									sh " cd /root/.jenkins/workspace/new/"
-									sh "sudo scp -i MyWS-1.pem index.html ec2-user@172.31.4.198:/mnt -y"
+									sh "sudo scp -i MyWS-1.pem index.html ec2-user@172.31.4.198:/mnt -yes"
 									sh "git checkout dev-1"
 									sh "chmod 400 /mnt/MyWS-1.pem"
 									sh " cp /mnt/MyWS-1.pem /root/.jenkins/workspace/new/"
