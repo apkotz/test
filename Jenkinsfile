@@ -9,12 +9,12 @@ pipeline {
 	     stage ('Cloning all branch & copied to node-1 ') {
 			
 								steps {
-									sh "sudo chmod 700 /mnt/MyWS-1"
+									sh "sudo chmod 700 /mnt/MyWS-1.pem"
 									sh "git checkout qa"
 									sh " cp /mnt/MyWS-1.pem /root/.jenkins/workspace/new/"
 									sh " scp -i '/root/.jenkins/workspace/new/MyWS-1.pem' index.html ec2-user@172.31.4.198:/mnt"
 									sh "git checkout dev-1"
-									sh "chmod 400 /mnt/MyWS-1"
+									sh "chmod 400 /mnt/MyWS-1.pem"
 									sh " cp /mnt/MyWS-1.pem /root/.jenkins/workspace/new/"
 									sh " scp -i '/root/.jenkins/workspace/new/MyWS-1.pem' index.html ec2-user@172.31.40.40:/mnt"
 								}
