@@ -6,22 +6,22 @@ pipeline {
         }
       stages {
 		 
-	     stage ('Cloning all branch & copied to node-1 ') {
+	     stage ('Cloning all branch & copied to node-2 ') {
 			
 								steps {
 									
-									sh "git checkout qa"
+									sh "git checkout dev-1"
 									sh "cd"
 									sh "sudo scp -i /root/MyWs-1.pem /root/.jenkins/workspace/multi-branch-deploy/index.html ec2-user@172.31.34.207:/mnt"
-									sh "git checkout dev-1"
+									sh "git checkout qa"
 									sh "cd"
 									sh "sudo scp -i /root/MyWs-1.pem /root/.jenkins/workspace/multi-branch-deploy/index.html ec2-user@172.31.43.114:/mnt"
 								}
 			}
-		stage ('install httpd on Node-1') {
+		stage ('install httpd on Node-2') {
 								agent {
 									label {
-										label 'Node-1'
+										label 'Node-2'
 									}
 								}	
 								steps {
@@ -32,10 +32,10 @@ pipeline {
 				                 }
 			}
 		
-	    stage ('install httpd on Node-2'){			
+	    stage ('install httpd on Node-1'){			
 								agent {
 									label {
-										label 'Node-2'
+										label 'Node-1'
 									}
 								
 								}
