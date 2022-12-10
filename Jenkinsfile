@@ -12,10 +12,10 @@ pipeline {
 									
 									sh "git checkout dev-1"
 									sh "cd"
-									sh "sudo scp -i /root/MyWs-1.pem /root/.jenkins/workspace/multi-branch-deploy/index.html ec2-user@172.31.34.207:/mnt"
+									sh "sudo scp -i /root/MyWs-1.pem /root/.jenkins/workspace/multi-branch-deploy/index.html ec2-user@172.31.43.114:/mnt"
 									sh "git checkout qa"
 									sh "cd"
-									sh "sudo scp -i /root/MyWs-1.pem /root/.jenkins/workspace/multi-branch-deploy/index.html ec2-user@172.31.43.114:/mnt"
+									sh "sudo scp -i /root/MyWs-1.pem /root/.jenkins/workspace/multi-branch-deploy/index.html ec2-user@172.31.34.207:/mnt"
 								}
 			}
 		stage ('install httpd on Node-2') {
