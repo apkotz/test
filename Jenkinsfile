@@ -32,7 +32,7 @@ pipeline {
 				                 }
 			}
 		
-	    stage ('install httpd on node-2'){			
+	    stage ('install httpd on Node-2'){			
 								agent {
 									label {
 										label 'Node-2'
