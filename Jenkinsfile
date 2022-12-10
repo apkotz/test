@@ -9,15 +9,13 @@ pipeline {
 	     stage ('Cloning all branch & copied to node-1 ') {
 			
 								steps {
-									sh "sudo chmod 700 /mnt/MyWS-1.pem"
+									
 									sh "git checkout qa"
-									sh " cp /mnt/MyWS-1.pem /root/.jenkins/workspace/new/"
-									sh " cd /root/.jenkins/workspace/new/"
-									sh "scp -i MyWS-1.pem index.html ec2-user@172.31.4.198:/mnt"
+									sh "cd"
+									sh "scp -i MyWS-1.pem /root/.jenkins/workspace/new/index.html ec2-user@172.31.34.207:/mnt"
 									sh "git checkout dev-1"
-									sh "chmod 400 /mnt/MyWS-1.pem"
-									sh " cp /mnt/MyWS-1.pem /root/.jenkins/workspace/new/"
-									sh "scp -i /root/.jenkins/workspace/new/MyWS-1.pem index.html ec2-user@172.31.40.40:/mnt"
+									sh "cd"
+									sh "scp -i MyWS-1.pem /root/.jenkins/workspace/new/index.html ec2-user@172.31.43.114:/mnt"
 								}
 			}
 		stage ('install httpd on Node-1') {
@@ -28,7 +26,7 @@ pipeline {
 								}	
 								steps {
 										sh "sudo yum install httpd -y"
-									    sh "sudo service httpd start"
+									        sh "sudo service httpd start"
 										sh "sudo cp /mnt/index.html /var/www/html/"
 										sh "sudo chmod -R 777 /var/www/html/index.html"
 				                 }
